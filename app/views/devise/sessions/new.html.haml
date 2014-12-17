@@ -1,19 +1,20 @@
-.row
-  .col-md-4.col-md-offset-4
-    %h2 Log in
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form-group
-        %label Email
-        %br
-        = f.email_field :email, autofocus: true, class: "form-control"
-      .form-group
-        %label Password
-        %br
-        = f.password_field :password, autocomplete: "off", class: "form-control"
-      - if devise_mapping.rememberable?
+.pager
+  .row
+    .col-md-4.col-md-offset-4
+      %h2 Log in
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-group
-          = f.check_box :remember_me
-          = f.label :remember_me
-      .actions
+          %label Email
+
+          = f.email_field :email, autofocus: true, class: "form-control"
+        .form-group
+          %label Password
+
+          = f.password_field :password, autocomplete: "off", class: "form-control"
+        - if devise_mapping.rememberable?
+          .form-group
+            = f.check_box :remember_me
+            = f.label :remember_me
+
         = f.submit "Log in", class: "btn btn-default"
-      = render "devise/shared/links"
+        = render "devise/shared/links"
