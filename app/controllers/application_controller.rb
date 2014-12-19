@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  http_basic_authenticate_with name: "admin@cloudcastv.com", password: "CloudCast123"
+  
 
   # This is our new function that comes before Devise's one
   # before_filter :authenticate_user_from_token!

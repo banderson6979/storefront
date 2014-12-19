@@ -11,6 +11,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
+gem 'httparty'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -47,12 +48,12 @@ gem 'devise'
 
 # Gems for development and test tools
 group :development, :test do
-  # An IRB alternative and runtime developer console  
+  # An IRB alternative and runtime developer console
   gem 'pry'
-  
+
   # A collection of tools used for Rails development
   gem 'tol', github: "TakeOffLabs/tol", branch: "develop"
-  
+
   # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
-  gem "letter_opener" 
+  gem "letter_opener"
 end
