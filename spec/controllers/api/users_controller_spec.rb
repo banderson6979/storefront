@@ -42,6 +42,4 @@ describe Api::UsersController, type: :controller do
       end
     end
   end
-
-
 end

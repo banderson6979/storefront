@@ -1,8 +1,8 @@
 module Api
 class UsersController < BaseController
-before_action :auth_only!, except: [:create, :new]
+before_action :auth_only!, except: [:create]
 
-  def new
+  def create
     @user = User.new(user_params)
     @user.save
     #MailchimpSync.new.add_email(@user.email) if @user.email.present?
@@ -23,8 +23,7 @@ before_action :auth_only!, except: [:create, :new]
   protected
   def user_params
     params.require(:user) \
-          .permit(:email, :password, :password_confirmation,
-                  :first_name, :last_name)
+          .permit(:email, :password, :password_confirmation)
   end
 end
 end
