@@ -1,11 +1,11 @@
 module Api
 class UsersController < BaseController
-  before_action :auth_only!, except: [:create]
+before_action :auth_only!, except: [:create, :new]
 
-  def create
+  def new
     @user = User.new(user_params)
     @user.save
-    MailchimpSync.new.add_email(@user.email) if @user.email.present?
+    #MailchimpSync.new.add_email(@user.email) if @user.email.present?
     respond_with(:api, @user)
   end
 

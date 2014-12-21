@@ -46,6 +46,9 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+#Mailchimp
+gem 'gibbon'
+
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console
@@ -56,4 +59,13 @@ group :development, :test do
 
   # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
   gem "letter_opener"
+
+  gem "rspec-rails"
+end
+
+ 
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
 end
