@@ -4,7 +4,10 @@ class UsersController < BaseController
  # load_and_authorize_resource
   def create
     @user = User.new(user_params)
+    binding.pry
     @user.save
+
+    #UserMailer.signup_confirmation(@user).deliver
     respond_with(:api, @user)
   end
 
