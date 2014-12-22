@@ -48,6 +48,9 @@ gem 'devise'
 # Raven is a Ruby client for Sentry
 gem "sentry-raven", git: "https://github.com/getsentry/raven-ruby.git"
 
+# Authorization
+gem 'cancancan'
+
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console  

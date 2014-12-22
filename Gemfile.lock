@@ -78,6 +78,7 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.2.2)
+    cancancan (1.9.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -216,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   bootstrap-sass
+  cancancan
   coffee-rails (~> 4.0.0)
   devise
   haml
