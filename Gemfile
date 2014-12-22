@@ -46,6 +46,9 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+gem 'mini_magick'
+gem "carrierwave"
+
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console

@@ -22,7 +22,7 @@ class UsersController < BaseController
   protected
   def user_params
     params.require(:user) \
-          .permit(:email, :password, :password_confirmation)
+          .permit( :email, :password, :password_confirmation, :image)
   end
 end
 end
