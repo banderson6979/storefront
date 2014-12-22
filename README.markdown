@@ -40,4 +40,6 @@ Start the server:
 
     $ rails s
 
+If active admin is used change the email and password to suit your needs.
+
 Open <http://localhost:3000> in your browser to see the app running. If you have issues getting the app running, [email me](mailto:norbert@takeofflabs.com).
