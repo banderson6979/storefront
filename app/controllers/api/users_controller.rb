@@ -1,6 +1,6 @@
 module Api
 class UsersController < BaseController
-before_action :auth_only!, except: [:create]
+before_action :auth_only!, except: [:create, :update]
 
   def create
     @user = User.new(user_params)
@@ -10,7 +10,8 @@ before_action :auth_only!, except: [:create]
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
+    binding.pry
     @user.update_attributes(user_params) if @user
     respond_with(:api, @user)
   end
