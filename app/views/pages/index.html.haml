@@ -1,6 +1,6 @@
 %h2 Hello world
 
-= image_tag @user.image_url
+= image_tag current_user.image_url
 
 = link_to "Delogare", destroy_user_session_path, method: :delete, class: "btn btn-default"
 

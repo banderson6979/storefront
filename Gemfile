@@ -11,7 +11,6 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
-gem 'httparty'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -38,7 +37,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', group: :development
 
 # The administration framework for Ruby on Rails.
 gem 'activeadmin', github: 'activeadmin'
@@ -46,9 +45,17 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+gem 'fog'
+
+# Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
 gem 'mini_magick'
+
+# Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
 gem "carrierwave"
 
+gem 'httparty'
+
+gem 'omniauth-facebook'
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console
