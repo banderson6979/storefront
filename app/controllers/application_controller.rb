@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   # before_filter :authenticate_user!
 
   def current_user
-    User.find_by_authentication_token(params[:auth_token]) || warden.authenticate(scope: :user)
+    User.find_by_authentication_token(params[:auth_token]) || ( warden.authenticate(scope: :user) rescue nil)
   end
 
   def remember_token

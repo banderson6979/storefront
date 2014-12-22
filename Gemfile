@@ -46,9 +46,6 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
-#Mailchimp
-gem 'gibbon'
-
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console
