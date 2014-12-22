@@ -2,12 +2,11 @@ module Api
 class UsersController < BaseController
   before_action :auth_only!, except: [:create]
  # load_and_authorize_resource
+ 
   def create
     @user = User.new(user_params)
-    binding.pry
     @user.save
-
-    #UserMailer.signup_confirmation(@user).deliver
+    UserMailer.signup_confirmation(@user).deliver
     respond_with(:api, @user)
   end
 
