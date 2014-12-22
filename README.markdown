@@ -42,4 +42,7 @@ Start the server:
 
 If active admin is used change the email and password to suit your needs.
 
+Create a new Sentry application and set the dns:
+    $ File is located in config/initializers/raven.rb
+
 Open <http://localhost:3000> in your browser to see the app running. If you have issues getting the app running, [email me](mailto:norbert@takeofflabs.com).

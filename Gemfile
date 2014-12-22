@@ -45,6 +45,9 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+# Raven is a Ruby client for Sentry
+gem "sentry-raven", git: "https://github.com/getsentry/raven-ruby.git"
+
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console  
