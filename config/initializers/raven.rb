@@ -2,6 +2,6 @@ require 'raven'
 
 if Rails.env.production?
   Raven.configure do |config|
-    config.dsn = ''
+    config.dsn = ENV['SENTRY_DNS']
   end
 end
