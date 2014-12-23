@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   before_save :ensure_authentication_token
-
+  
   mount_uploader :image, ImageUploader
 
   def self.from_omniauth(auth)

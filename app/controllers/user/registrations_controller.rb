@@ -11,7 +11,6 @@ class User::RegistrationsController < Devise::RegistrationsController
   def create
     super
     UserMailer.signup_confirmation(@user).deliver
-    
   end
 
   # GET /resource/edit
