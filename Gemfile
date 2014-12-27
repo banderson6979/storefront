@@ -56,6 +56,10 @@ gem "carrierwave"
 gem 'httparty'
 
 gem 'omniauth-facebook'
+
+gem 'omniauth-twitter'
+
+gem 'omniauth-instagram'
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console
