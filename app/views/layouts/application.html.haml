@@ -17,10 +17,8 @@
         Signed in as
         = succeed "!" do
           %strong= current_user.email
-        = link_to "Sign out", signout_path, id: "sign_out"
-      - else
-        = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
-    
+        = link_to "Sign out", signout_path, class: "btn btn-default"
+
     %script{type: "text/javascript", 'data-turbolinks-eval'=>false}
       var string = "#{(j (yield :scripts))}";
       eval(string);

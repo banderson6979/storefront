@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   skip_before_action :verify_authenticity_token, if: :json_request?
   def json_request?
@@ -23,6 +24,15 @@ class ApplicationController < ActionController::Base
     "#{data.first.first}-#{data.last}"
   end
 
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   flash[:notice] = "Access denied!"
+  #   redirect_to root_path
+  # end
+
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+
   private
 
   # For this example, we are simply using token authentication
@@ -43,5 +53,9 @@ class ApplicationController < ActionController::Base
 
   def invalid_credentials
     render json: {}, status: 401
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :image, :password_confirmation) }
   end
 end
