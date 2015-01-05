@@ -1,4 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  
   def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.persisted?
@@ -20,6 +21,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.twitter_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
+
   end
 
   def instagram

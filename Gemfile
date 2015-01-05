@@ -45,6 +45,7 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+# The Ruby cloud services library.
 gem 'fog'
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
@@ -53,13 +54,18 @@ gem 'mini_magick'
 # Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
 gem "carrierwave"
 
+# Makes http fun! Also, makes consuming restful web services dead easy.
 gem 'httparty'
 
+# Facebook OAuth2 Strategy for OmniAuth
 gem 'omniauth-facebook'
 
+# OmniAuth strategy for Twitter
 gem 'omniauth-twitter'
 
+# OmniAuth strategy for Instagram
 gem 'omniauth-instagram'
+
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console
@@ -71,14 +77,18 @@ group :development, :test do
   # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
   gem "letter_opener"
 
+  # RSpec for Rails
   gem "rspec-rails"
 
+  # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
   gem "capybara"
 end
 
 
 group :test do
+  # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
   gem "factory_girl_rails"
 
+  # Guard::RSpec automatically run your specs (much like autotest).
   gem "guard-rspec"
 end

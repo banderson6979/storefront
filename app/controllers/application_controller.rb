@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_filter :set_locale
   skip_before_action :verify_authenticity_token, if: :json_request?
   def json_request?
     request.format.json?
@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
     User.find_by_authentication_token(params[:auth_token]) || ( warden.authenticate(scope: :user) rescue nil)
     #@current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-  #helper_method :current_user
   def remember_token
     data = User.serialize_into_cookie @user
     "#{data.first.first}-#{data.last}"
@@ -57,5 +56,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :image, :password_confirmation) }
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+  def default_url_options(options = {})
+    {locale: I18n.locale}
   end
 end

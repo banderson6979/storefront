@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get 'sign_out', to: 'devise/sessions#destroy', as: :signout
   end
 
+  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  get '', to: redirect("/#{I18n.default_locale}")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
