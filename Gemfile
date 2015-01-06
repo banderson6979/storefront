@@ -72,6 +72,9 @@ gem 'omniauth-instagram'
 gem 'rack-cors', require: 'rack/cors'
 gem 'font_assets' 
 
+# Start processes using the Procfile
+gem 'foreman'
+
 # Gems for development and test tools
 group :development, :test do
   # An IRB alternative and runtime developer console
