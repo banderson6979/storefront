@@ -78,4 +78,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000'}
+  config.action_mailer.delivery_method = :letter_opener
+
+  # Set the environment variables
+  ENV['FACEBOOK_KEY'] = ''
+  ENV['FACEBOOK_SECRET'] = ''
+
+  ENV['TWITTER_KEY'] = ''
+  ENV['TWITTER_SECRET'] = ''
+
+  ENV['INSTAGRAM_KEY'] = ''
+  ENV['INSTAGRAM_SECRET'] = ''
 end

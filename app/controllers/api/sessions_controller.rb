@@ -1,5 +1,6 @@
 module Api
 class SessionsController < BaseController
+
   def create
     unless (params[:email] && params[:password]) || (params[:remember_token])
       return missing_params

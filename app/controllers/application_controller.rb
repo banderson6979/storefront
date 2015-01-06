@@ -1,41 +1,50 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  http_basic_authenticate_with name: "admin@cloudcastv.com", password: "CloudCast123"
-
-  # This is our new function that comes before Devise's one
-  # before_filter :authenticate_user_from_token!
-  # This is Devise's authentication
-  # before_filter :authenticate_user!
-
-  def current_user
-    return nil unless params[:auth_token]
-    User.find_by authentication_token: params[:auth_token]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_locale
+  skip_before_action :verify_authenticity_token, if: :json_request?
+  def json_request?
+    request.format.json?
   end
 
+  def current_user
+    User.find_by_authentication_token(params[:auth_token]) || ( warden.authenticate(scope: :user) rescue nil)
+  end
   def remember_token
     data = User.serialize_into_cookie @user
     "#{data.first.first}-#{data.last}"
   end
 
+
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+
   private
 
-  # For this example, we are simply using token authentication
-  # via parameters. However, anyone could use Rails's token
-  # authentication features to get the token from a header.
+
   def authenticate_user_from_token!
     user_token = params[:user_token].presence
     user       = user_token && User.find_by_authentication_token(user_token.to_s)
 
     if user
-      # Notice we are passing store false, so the user is not
-      # actually stored in the session and a token is needed
-      # for every request. If you want the token to work as a
-      # sign in token, you can simply remove store: false.
       sign_in user, store: false
     end
   end
 
   def invalid_credentials
     render json: {}, status: 401
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :image, :password_confirmation) }
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+  def default_url_options(options = {})
+    {locale: I18n.locale}
   end
 end

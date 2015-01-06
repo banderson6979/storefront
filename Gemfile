@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', group: :development
 
 # The administration framework for Ruby on Rails.
 gem 'activeadmin', github: 'activeadmin'
@@ -45,20 +45,56 @@ gem 'activeadmin', github: 'activeadmin'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+
 # Raven is a Ruby client for Sentry
 gem "sentry-raven", git: "https://github.com/getsentry/raven-ruby.git"
 
 # Authorization
 gem 'cancancan'
 
+# The Ruby cloud services library.
+gem 'fog'
+
+# Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
+gem 'mini_magick'
+
+# Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
+gem "carrierwave"
+
+# Makes http fun! Also, makes consuming restful web services dead easy.
+gem 'httparty'
+
+# Facebook OAuth2 Strategy for OmniAuth
+gem 'omniauth-facebook'
+
+# OmniAuth strategy for Twitter
+gem 'omniauth-twitter'
+
+# OmniAuth strategy for Instagram
+gem 'omniauth-instagram'
+
+
 # Gems for development and test tools
 group :development, :test do
-  # An IRB alternative and runtime developer console  
+  # An IRB alternative and runtime developer console
   gem 'pry'
-  
+
   # A collection of tools used for Rails development
   gem 'tol', github: "TakeOffLabs/tol", branch: "develop"
-  
+
   # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
-  gem "letter_opener" 
+  gem "letter_opener"
+
+  # RSpec for Rails
+  gem "rspec-rails"
+
+  # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
+  gem "capybara"
+end
+
+
+group :test do
+  # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
+  gem "factory_girl_rails"
+
 end

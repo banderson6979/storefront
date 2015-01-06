@@ -5,7 +5,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    
+
   %body{class: params[:controller].gsub("/", "-")}
+
     .container-fluid
+      = link_to_unless_current "En", locale: "en"
+      = link_to_unless_current "Ro", locale: "ro"
       = yield
+
+      %script{type: "text/javascript", 'data-turbolinks-eval'=>false}
+        var string = "#{(j (yield :scripts))}";
+        eval(string);
+        window.starterkitrails.shared.init();
+    = render 'shared/flash_notice'
