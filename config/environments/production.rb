@@ -86,6 +86,17 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "raulandrei3094@gmail.com",
-    password: "444827285"
+    password: "testpassword"
   }
+
+
+  # Set the environment variables
+  ENV['FACEBOOK_KEY'] = '317168138486358'
+  ENV['FACEBOOK_SECRET'] = 'af25517eb86f9d5d9de3d4bca01079fe'
+
+  ENV['TWITTER_KEY'] = 'XY2UzRuj3vZZtGSkKexZrpzrJ'
+  ENV['TWITTER_SECRET'] = 'q93iXlnQZZdVE3JM9fMLx4h98jxy76X6z30Tr5r1D9GoW3dhp4'
+
+  ENV['INSTAGRAM_KEY'] = '3e162c82d5014111a37f19e65347ead1'
+  ENV['INSTAGRAM_SECRET'] = '71f35ca6e4f14554b739b048135a316a'
 end

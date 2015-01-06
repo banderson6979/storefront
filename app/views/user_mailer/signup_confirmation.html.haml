@@ -1,5 +1,3 @@
-%p
-  = @user.email
-  ,
-%p Thank you for signing up.
-%p Now you can login using your credentials.
+%p= t ".head"
+%p= @user.email
+%p= t ".details"

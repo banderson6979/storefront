@@ -261,3 +261,16 @@ Unsuccessful response
 ```json
 false
 ```
+
+****************
+
+## Authenticate User via Facebook
+
+### GET /users/auth/facebook/callback
+
+#### Authentication responses
+
+Successful authentication
+
+
+****************

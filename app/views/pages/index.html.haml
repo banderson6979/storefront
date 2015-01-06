@@ -1,7 +1,14 @@
-%h2 Hello world
+%h2= t ".title"
 
 = image_tag @user.image_url if @user.image.present?
 
-//= link_to "Delogare", destroy_user_session_path, method: :delete, class: "btn btn-default"
 
-= link_to "Edit", edit_user_registration_path, class: "btn btn-default"
+#user_nav
+  - if current_user
+    = t ".signed_in"
+    = succeed "!" do
+      %strong= current_user.email
+    = link_to (t ".button_sign_out"), signout_path, class: "btn btn-default"
+
+
+= link_to (t ".button_edit"), edit_user_registration_path, class: "btn btn-default"

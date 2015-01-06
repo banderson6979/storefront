@@ -13,16 +13,6 @@
       = link_to_unless_current "Ro", locale: "ro"
       = yield
 
-
-
-
-      #user_nav
-        - if current_user
-          Signed in as
-          = succeed "!" do
-            %strong= current_user.email
-          = link_to "Sign out", signout_path, class: "btn btn-default"
-
       %script{type: "text/javascript", 'data-turbolinks-eval'=>false}
         var string = "#{(j (yield :scripts))}";
         eval(string);

@@ -89,6 +89,4 @@ group :test do
   # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
   gem "factory_girl_rails"
 
-  # Guard::RSpec automatically run your specs (much like autotest).
-  gem "guard-rspec"
 end

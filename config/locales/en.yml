@@ -25,6 +25,10 @@ en:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      new:
+        resend_confirmation: "Resend confirmation instructions"
+        email: "Email"
+        button_resend_confirmation: "Resend confirmation instructions"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -37,11 +41,23 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
+        head: "Welcome,"
         subject: "Confirmation instructions"
+        details: "You can confirm your account email through the link below:"
+        confirm_account: "Confirm my account"
       reset_password_instructions:
+        head: "Hello,"
         subject: "Reset password instructions"
+        details: "Someone has requested a link to change your password. You can do this through the link below."
+        change_password: "Change my password"
+        details_to_ignore: "If you didn't request this, please ignore this email."
+        details_to_change: "Your password won't change until you access the link above and create a new one."
       unlock_instructions:
         subject: "Unlock instructions"
+        head: ",Hello"
+        details: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        instructions: "Click the link below to unlock your account:"
+        button_unlock: "Unlock my account"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -51,6 +67,15 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      edit:
+        change_password: "Change your password"
+        new_password: "New password"
+        confirm_new_password: "Confirm new password"
+        button_change_password: "Change my password"
+      new:
+        forgot_password: "Forgot your password?"
+        email: "Email"
+        password_reset_instr: "Send me reset password instructions"
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -59,14 +84,51 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
+      edit:
+        email: "Email"
+        picture: "Picture"
+        new_password: "New password"
+        confirm_new_password: "Confirm new password"
+        new_password_details: "( leave blank if you don't want to change it )"
+        current_password: "Current password"
+        current_password_details: "(we need your current password to confirm your changes)"
+        cancel_account: "Cancel my account"
+        button_cancel_account: "Cancel my account"
+        confirmation_cancel_account: "Are you sure?"
+        back: "Back"
+      new:
+        sign_up: "Sign up"
+        email: "Email"
+        password: "Password"
+        confirm_password: "Confirm Password"
+        sign_up_button: "Sign up"
+
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        log_in: "Log in"
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+        button_log_in: "Log in"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      new:
+        resend_unlock: "Resend unlock instructions"
+        email: "Email"
+        button_resend_unlock: "Resend unlock instructions"
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_password: "Forgot your password?"
+        confirmation_instructions: "Didn't receive confirmation instructions?"
+        unlock_instructions: "Didn't receive unlock instructions?"
+        sign_in_provider: "Sign in with "
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
@@ -77,3 +139,20 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  user_mailer:
+    reset_password:
+      head: "Hello,"
+      subject: "Reset password instructions"
+      details: "Someone has requested a link to change your password. You can do this through the link below."
+      change_password: "Change my password"
+      details_to_ignore: "If you didn't request this, please ignore this email."
+      details_to_change: "Your password won't change until you access the link above and create a new one."
+    signup_confirmation:
+      head: "Welcome,"
+      details: "Thank you for signing up. Now you can login using your credentials."
+  pages:
+    index:
+      title: "Hello world!"
+      signed_in: "Signed in as"
+      button_sign_out: "Sign out"
+      button_edit: "Edit"

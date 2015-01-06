@@ -36,5 +36,15 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000'}
   config.action_mailer.delivery_method = :letter_opener
-  
+
+
+  # Set the environment variables
+  ENV['FACEBOOK_KEY'] = '317168138486358'
+  ENV['FACEBOOK_SECRET'] = 'af25517eb86f9d5d9de3d4bca01079fe'
+
+  ENV['TWITTER_KEY'] = 'XY2UzRuj3vZZtGSkKexZrpzrJ'
+  ENV['TWITTER_SECRET'] = 'q93iXlnQZZdVE3JM9fMLx4h98jxy76X6z30Tr5r1D9GoW3dhp4'
+
+  ENV['INSTAGRAM_KEY'] = '3e162c82d5014111a37f19e65347ead1'
+  ENV['INSTAGRAM_SECRET'] = '71f35ca6e4f14554b739b048135a316a'
 end
