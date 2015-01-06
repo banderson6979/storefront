@@ -3,6 +3,15 @@ Rails.application.configure do
 
   # Set the environment variables
   ENV['SENTRY_DNS'] = ''
+
+  ENV['FACEBOOK_KEY'] = ''
+  ENV['FACEBOOK_SECRET'] = ''
+  
+  ENV['TWITTER_KEY'] = ''
+  ENV['TWITTER_SECRET'] = ''
+  
+  ENV['INSTAGRAM_KEY'] = ''
+  ENV['INSTAGRAM_SECRET'] = ''
   
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -23,18 +32,19 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  config.static_cache_control = 'public, s-maxage=2592000, maxage=86400'
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
@@ -81,14 +91,4 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000'}
   config.action_mailer.delivery_method = :letter_opener
-
-  # Set the environment variables
-  ENV['FACEBOOK_KEY'] = ''
-  ENV['FACEBOOK_SECRET'] = ''
-
-  ENV['TWITTER_KEY'] = ''
-  ENV['TWITTER_SECRET'] = ''
-
-  ENV['INSTAGRAM_KEY'] = ''
-  ENV['INSTAGRAM_SECRET'] = ''
 end

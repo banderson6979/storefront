@@ -184,6 +184,8 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font_assets (0.1.11)
+      rack
     formatador (0.2.5)
     formtastic (3.1.2)
       actionpack (>= 3.2.13)
@@ -274,6 +276,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-cors (0.3.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.8)
@@ -367,6 +370,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   fog
+  font_assets
   haml
   httparty
   jbuilder (~> 2.0)
@@ -378,6 +382,7 @@ DEPENDENCIES
   omniauth-twitter
   pg
   pry
+  rack-cors
   rails (= 4.1.8)
   rspec-rails
   sass-rails (~> 4.0.3)

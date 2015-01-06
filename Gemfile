@@ -33,18 +33,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-
-gem 'sdoc', '~> 0.4.0',          group: :doc
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring', group: :development
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 # The administration framework for Ruby on Rails.
 gem 'activeadmin', github: 'activeadmin'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
-
 
 # Raven is a Ruby client for Sentry
 gem "sentry-raven", git: "https://github.com/getsentry/raven-ruby.git"
@@ -73,6 +68,9 @@ gem 'omniauth-twitter'
 # OmniAuth strategy for Instagram
 gem 'omniauth-instagram'
 
+# Static asset serving
+gem 'rack-cors', require: 'rack/cors'
+gem 'font_assets' 
 
 # Gems for development and test tools
 group :development, :test do
@@ -90,11 +88,13 @@ group :development, :test do
 
   # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
   gem "capybara"
+  
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
 
 group :test do
   # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
   gem "factory_girl_rails"
-
 end
