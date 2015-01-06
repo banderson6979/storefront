@@ -1,9 +1,9 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
-    provider:             'AWS',
-    aws_access_key_id:     'AKIAJCYBJRQJPYSIJ7PQ',
-    aws_secret_access_key: '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',
-    region:                'us-east-1'
+    provider:              ENV['CARRIERWAVE_PROVIDER'],
+    aws_access_key_id:     ENV['CARRIERWAVE_ACCESS_KEY'],
+    aws_secret_access_key: ENV['CARRIERWAVE_SECRET_ACCESS'],
+    region:                ENV['CARRIERWAVE_REGION']
   }
-  config.fog_directory  = Rails.env + "-orchestrano"
+  config.fog_directory  = Rails.env + ENV['CARRIERWAVE_FOG_DIRECTORY']
 end
