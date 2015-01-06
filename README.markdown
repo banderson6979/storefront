@@ -262,15 +262,117 @@ Unsuccessful response
 false
 ```
 
+
 ****************
 
 ## Authenticate User via Facebook
 
 ### GET /users/auth/facebook/callback
 
+Request fields
+
+Field name | Input data type | Example
+--- | --- | ---
+email | text | test@example.com
+password | text | some_valid_password
+
 #### Authentication responses
+
+Response fields
+
+Field name | Data type | Notes
+--- | --- | ---
+auth_token | text | This will uniquely identify the current session
+user_id | integer | Signed in user_id
 
 Successful authentication
 
+```
+{
+  "user_id":"1",
+  "auth_token":"ffffd6d2d12d51f164c5f3a85066322c",
+}
+```
+
+Unsuccessful authentication
+```
+{
+  type:"Invalid credentials"
+}
+```
 
 ****************
+
+## Authenticate User via Twitter
+
+### GET /users/auth/twitter/callback
+
+Request fields
+
+Field name | Input data type | Example
+--- | --- | ---
+email | text | test@example.com
+password | text | some_valid_password
+
+#### Authentication responses
+
+Response fields
+
+Field name | Data type | Notes
+--- | --- | ---
+auth_token | text | This will uniquely identify the current session
+user_id | integer | Signed in user_id
+
+Successful authentication
+
+```
+{
+  "user_id":"1",
+  "auth_token":"ffffd6d2d12d51f164c5f3a85066322c",
+}
+```
+
+Unsuccessful authentication
+```
+{
+  type:"Invalid credentials"
+}
+```
+
+****************
+
+## Authenticate User via Instagram
+
+### GET /users/auth/instagram/callback
+
+Request fields
+
+Field name | Input data type | Example
+--- | --- | ---
+email | text | test@example.com
+password | text | some_valid_password
+
+#### Authentication responses
+
+Response fields
+
+Field name | Data type | Notes
+--- | --- | ---
+auth_token | text | This will uniquely identify the current session
+user_id | integer | Signed in user_id
+
+Successful authentication
+
+```
+{
+  "user_id":"1",
+  "auth_token":"ffffd6d2d12d51f164c5f3a85066322c",
+}
+```
+
+Unsuccessful authentication
+```
+{
+  type:"Invalid credentials"
+}
+```

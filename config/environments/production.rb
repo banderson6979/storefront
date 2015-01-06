@@ -77,26 +77,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000'}
-  #config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "railscasts.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: "raulandrei3094@gmail.com",
-    password: "testpassword"
-  }
-
+  config.action_mailer.delivery_method = :letter_opener
 
   # Set the environment variables
-  ENV['FACEBOOK_KEY'] = '317168138486358'
-  ENV['FACEBOOK_SECRET'] = 'af25517eb86f9d5d9de3d4bca01079fe'
+  ENV['FACEBOOK_KEY'] = ''
+  ENV['FACEBOOK_SECRET'] = ''
 
-  ENV['TWITTER_KEY'] = 'XY2UzRuj3vZZtGSkKexZrpzrJ'
-  ENV['TWITTER_SECRET'] = 'q93iXlnQZZdVE3JM9fMLx4h98jxy76X6z30Tr5r1D9GoW3dhp4'
+  ENV['TWITTER_KEY'] = ''
+  ENV['TWITTER_SECRET'] = ''
 
-  ENV['INSTAGRAM_KEY'] = '3e162c82d5014111a37f19e65347ead1'
-  ENV['INSTAGRAM_SECRET'] = '71f35ca6e4f14554b739b048135a316a'
+  ENV['INSTAGRAM_KEY'] = ''
+  ENV['INSTAGRAM_SECRET'] = ''
 end
