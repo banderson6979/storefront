@@ -1,21 +1,30 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+
+
+  get 'users/edit/:id', to: "users#edit", as: "user/edit"
+
+
+  resources :users, except: 'edit'
 
   root 'pages#index'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
 
-  # devise_scope :user do
-  #   get 'sign_out', to: 'devise/sessions#destroy', as: :signout
-  # end
+  devise_scope :user do
+    get 'sign_out', to: 'devise/sessions#destroy', as: :signout
+  end
 
-  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-  get '', to: redirect("/#{I18n.default_locale}")
+  # get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  # get '', to: redirect("/#{I18n.default_locale}")
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  
+
+
+
 
   namespace :api, defaults: {format: :json} do
     devise_scope :user do

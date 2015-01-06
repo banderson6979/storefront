@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Set the environment variables
   ENV['SENTRY_DNS'] = ''
-  
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
