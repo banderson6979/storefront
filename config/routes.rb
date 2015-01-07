@@ -3,12 +3,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-
-
-  get 'users/edit/:id', to: "users#edit", as: "user/edit"
-
-
+  # Routes for Users
   resources :users, except: 'edit'
+
+  # User edit page
+  get 'users/edit/:id', to: "users#edit", as: "user/edit"
 
   root 'pages#index'
 
