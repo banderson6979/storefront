@@ -4,10 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # Routes for Users
-  resources :users, except: 'edit'
-
-  # User edit page
-  get 'users/edit/:id', to: "users#edit", as: "user/edit"
+  resources :users
 
   root 'pages#index'
 
@@ -20,10 +17,6 @@ Rails.application.routes.draw do
 
   # get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
   # get '', to: redirect("/#{I18n.default_locale}")
-
-
-
-
 
   namespace :api, defaults: {format: :json} do
     devise_scope :user do

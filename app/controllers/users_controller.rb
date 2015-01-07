@@ -1,24 +1,13 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-
-  def edit
-    @user = User.find(params[:id])
-  end
+  load_and_authorize_resource
 
   def update()
-    @user = User.find(params[:id])
-    if params[:user][:password].blank?
-      if @user.update_attributes(user_only_image)
-        redirect_to root_path
-      else
-        render 'edit'
-      end
+    prepare_params
+    if @user.update_attributes(user_params)
+      redirect_to root_path
     else
-      if @user.update_attributes(user_params)
-        redirect_to root_path
-      else
-        render 'edit'
-      end
+      render 'edit'
     end
   end
 
@@ -28,7 +17,17 @@ class UsersController < ApplicationController
       params.require(:user).permit( :email, :password, :password_confirmation, :image)
     end
 
-    def user_only_image
-      params.require(:user).permit(:image)
+    def load_user
+      user = User.find(params[:id])
     end
+
+    def prepare_params
+      if params[:user][:password].blank? && \
+        params[:user][:password_confirmation].blank?
+        params[:user].delete(:password)
+        params[:user].delete(:password_confirmation)
+    end
+
+  end
+
 end
