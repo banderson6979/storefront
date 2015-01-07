@@ -6,13 +6,13 @@ Rails.application.configure do
 
   ENV['FACEBOOK_KEY'] = ''
   ENV['FACEBOOK_SECRET'] = ''
-  
+
   ENV['TWITTER_KEY'] = ''
   ENV['TWITTER_SECRET'] = ''
-  
+
   ENV['INSTAGRAM_KEY'] = ''
   ENV['INSTAGRAM_SECRET'] = ''
-  
+
   ENV['CARRIERWAVE_PROVIDER'] = ''
   ENV['CARRIERWAVE_ACCESS_KEY'] = ''
   ENV['CARRIERWAVE_SECRET_ACCESS'] = ''

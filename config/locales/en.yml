@@ -156,3 +156,12 @@ en:
       signed_in: "Signed in as"
       button_sign_out: "Sign out"
       button_edit: "Edit"
+  users:
+    edit:
+      email: "Email"
+      picture: "Picture"
+      new_password: "New password"
+      confirm_new_password: "Confirm new password"
+      new_password_details: "( leave blank if you don't want to change it )"
+      back: "Back"
+      button_update: "Update"
