@@ -1,13 +1,20 @@
-
 .row
   .col-md-4.col-md-offset-4
-    %h2= t ".resend_unlock"
-    = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-      - add_error(resource.errors.full_messages.to_sentence, 'alert') if resource.errors.present?
-      .form-group
-        %label= t ".email"
+    .wrapper
+      .logo
+        = image_tag "Batman2.png"
+        STARTER-KIT
+        
+      = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+        - add_error(resource.errors.full_messages.to_sentence, 'alert') if resource.errors.present?
 
-        = f.email_field :email, autofocus: true, class: "form-control"
+        .input-group.input-group-lg.bottom-margin
+          .input-group-addon
+            .glyphicon.glyphicon-user
+          .icon-addon
+            .input-group-lg
+              = f.email_field :email, autofocus: true, placeholder: "#{t ".email"}", autocomplete: "off", class: "form-control"
 
-        = f.submit (t ".button_resend_unlock"), class: "btn btn-default"
-    = render "devise/shared/links"
+        = f.submit (t ".button_resend_unlock"), class: "btn btn-success full-width"
+      .help-links
+        = render "devise/shared/links"

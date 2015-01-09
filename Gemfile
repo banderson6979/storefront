@@ -26,6 +26,9 @@ gem 'haml'
 # using bootstrap 3 - flat UI
 gem 'bootstrap-sass'
 
+# bootstrap glyphicons scss
+gem 'bootstrap-glyphicons'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -73,7 +76,7 @@ gem 'omniauth-instagram'
 
 # Static asset serving
 gem 'rack-cors', require: 'rack/cors'
-gem 'font_assets' 
+gem 'font_assets'
 
 # Start processes using the Procfile
 gem 'foreman'
@@ -94,7 +97,7 @@ group :development, :test do
 
   # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
   gem "capybara"
-  
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

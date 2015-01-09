@@ -1,11 +1,19 @@
-
 .row
   .col-md-4.col-md-offset-4
-    %h2= t ".resend_confirmation"
-    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-      - add_error(resource.errors.full_messages.to_sentence, 'alert') if resource.errors.present?
-      .form-group
-        %label= t ".email"
-        = f.email_field :email, placeholder: (t ".email"), autofocus: true, class: "form-control"
-        = f.submit (t ".button_resend_confirmation"), class: "btn btn-default"
-    = render "devise/shared/links"
+    .wrapper
+      .logo
+        = image_tag "Batman2.png"
+        STARTER-KIT
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        - add_error(resource.errors.full_messages.to_sentence, 'alert') if resource.errors.present?
+
+        .input-group.input-group-lg.bottom-margin
+          .input-group-addon
+            .glyphicon.glyphicon-user
+          .icon-addon
+            .input-group-lg
+              = f.email_field :email, autofocus: true, placeholder: "#{t ".email"}", autocomplete: "off", class: "form-control"
+
+        = f.submit (t ".button_resend_confirmation"), class: "btn btn-success full-width"
+      .help-links
+        = render "devise/shared/links"
