@@ -73,9 +73,6 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.9)
-    bootstrap-glyphicons (0.0.1)
-      railties (>= 3.0)
-      sass (>= 3.2)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
     bourbon (3.2.3)
@@ -188,6 +185,8 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-sass (4.2.2)
+      sass (~> 3.2)
     font_assets (0.1.11)
       rack
     foreman (0.77.0)
@@ -375,7 +374,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
-  bootstrap-glyphicons
   bootstrap-sass
   cancancan
   capybara
@@ -384,6 +382,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   fog
+  font-awesome-sass
   font_assets
   foreman
   haml

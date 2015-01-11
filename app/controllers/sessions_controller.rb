@@ -12,9 +12,9 @@ class SessionsController < ApplicationController
   end
 
   private
-  
+
   def redirect_to_back_or_root(default = root_path)
-    if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+    if request.env["HTTP_REFERER"].present? && request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
       redirect_to :back
     else
       redirect_to root_url
