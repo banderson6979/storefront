@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_filter :set_locale
   skip_before_action :verify_authenticity_token, if: :json_request?
+
   def json_request?
     request.format.json?
   end
@@ -10,11 +11,11 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find_by_authentication_token(params[:auth_token]) || ( warden.authenticate(scope: :user) rescue nil)
   end
+
   def remember_token
     data = User.serialize_into_cookie @user
     "#{data.first.first}-#{data.last}"
   end
-
 
   def after_sign_in_path_for(resource)
     root_path
@@ -22,11 +23,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-
   def authenticate_user_from_token!
     user_token = params[:user_token].presence
     user       = user_token && User.find_by_authentication_token(user_token.to_s)
-
     if user
       sign_in user, store: false
     end
@@ -41,10 +40,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params[:locale] if params[:locale].present?
+    I18n.locale = session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
 
-  def default_url_options(options = {})
-    {locale: I18n.locale}
-  end
 end

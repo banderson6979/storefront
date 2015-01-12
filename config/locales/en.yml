@@ -26,7 +26,6 @@ en:
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
       new:
-        resend_confirmation: "Resend confirmation instructions"
         email: "Email"
         button_resend_confirmation: "Resend confirmation instructions"
     failure:
@@ -68,12 +67,10 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
       edit:
-        change_password: "Change your password"
         new_password: "New password"
         confirm_new_password: "Confirm new password"
         button_change_password: "Change my password"
       new:
-        forgot_password: "Forgot your password?"
         email: "Email"
         password_reset_instr: "Send me reset password instructions"
     registrations:
@@ -89,46 +86,37 @@ en:
         picture: "Picture"
         new_password: "New password"
         confirm_new_password: "Confirm new password"
-        new_password_details: "( leave blank if you don't want to change it )"
         current_password: "Current password"
-        current_password_details: "(we need your current password to confirm your changes)"
-        cancel_account: "Cancel my account"
-        button_cancel_account: "Cancel my account"
-        confirmation_cancel_account: "Are you sure?"
-        back: "Back"
+        button_update: "Update"
       new:
-        sign_up: "Sign up"
         email: "Email"
         password: "Password"
         confirm_password: "Confirm Password"
         sign_up_button: "Sign up"
-
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
       new:
-        log_in: "Log in"
         email: "Email"
         password: "Password"
         remember_me: "Remember me"
-        button_log_in: "Log in"
+        button_log_in: "Login"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
       new:
-        resend_unlock: "Resend unlock instructions"
         email: "Email"
         button_resend_unlock: "Resend unlock instructions"
     shared:
       links:
-        log_in: "Log in"
+        log_in: "Login"
         sign_up: "Sign up"
         forgot_password: "Forgot your password?"
         confirmation_instructions: "Didn't receive confirmation instructions?"
         unlock_instructions: "Didn't receive unlock instructions?"
-        sign_in_provider: "Sign in with "
+        sign_in_provider: "Sign in with: "
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
@@ -162,6 +150,4 @@ en:
       picture: "Picture"
       new_password: "New password"
       confirm_new_password: "Confirm new password"
-      new_password_details: "( leave blank if you don't want to change it )"
-      back: "Back"
       button_update: "Update"

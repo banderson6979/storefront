@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  # Routes for Devise and Omniauth
+
+  # the page root
+  root 'pages#index'
+
+  # routes for Devise and Omniauth
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   # routes for Active Admin
@@ -17,6 +21,9 @@ Rails.application.routes.draw do
     resources :sessions
   end
 
+  # routes for locale change
+  get 'sessions/:locale', to: "sessions#switch", as: :sessions
+
   # routes for Users
   resources :users
 
@@ -29,10 +36,4 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
 
-  # routes for locale chage - will be removed
-  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-  get '', to: redirect("/#{I18n.default_locale}")
-
-  # the page root
-  root 'pages#index'
 end
