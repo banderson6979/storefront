@@ -6,10 +6,10 @@ Rails.application.configure do
 
   ENV['FACEBOOK_KEY'] = ''
   ENV['FACEBOOK_SECRET'] = ''
-  
+
   ENV['TWITTER_KEY'] = ''
   ENV['TWITTER_SECRET'] = ''
-  
+
   ENV['INSTAGRAM_KEY'] = ''
   ENV['INSTAGRAM_SECRET'] = ''
 
@@ -18,7 +18,7 @@ Rails.application.configure do
   ENV['CARRIERWAVE_SECRET_ACCESS'] = 'XIC81V22ohyE1lBhJL9o8wPXX1lf5MtiboO8L0K6'
   ENV['CARRIERWAVE_REGION'] = 'us-east-1'
   ENV['CARRIERWAVE_FOG_DIRECTORY'] = '-orchestrano'
-  
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
