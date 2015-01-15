@@ -4,8 +4,8 @@ Rails.application.configure do
   # Set the environment variables
   ENV['SENTRY_DNS'] = ''
 
-  ENV['FACEBOOK_KEY'] = ''
-  ENV['FACEBOOK_SECRET'] = ''
+  ENV['FACEBOOK_KEY'] = '317168138486358'
+  ENV['FACEBOOK_SECRET'] = 'af25517eb86f9d5d9de3d4bca01079fe'
 
   ENV['TWITTER_KEY'] = ''
   ENV['TWITTER_SECRET'] = ''

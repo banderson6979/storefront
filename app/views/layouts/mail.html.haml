@@ -1,0 +1,84 @@
+%html
+  %head
+    %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %title Email StarterKit
+    :css
+      .body {margin: 0; padding: 0; background-color: #234865;}
+      .case {background-color: #234865;}
+      .full_width_table{border: 0; width: 100%}
+      .center_full_table{border: 0; background-color: transparent; width: 100%}
+      #top{ border: 0; width: 578px}
+      .td_center{height: 60px; vertical-align: top}
+      .td_top{height: 20px; vertical-align: top}
+      .td_bg{background-color: #c6d2db; height: 79px; vertical-align: top}
+      .tr_td_top{height: 22px; width: 68%}
+      .tr_td_bot{height: 20px; width: 32%}
+      .td_vtop{vertical-align: top}
+      .td_height{height: 10px}
+      .table_width{border: 0; width: 82%}
+      .td_vbot{vertical-align: bottom; width: 7%}
+      .tr_td_wid_top{width: 15px}
+      .tr_td_wid_bot{width: 10px}
+      .td_vmid{vertical-align: middle; width: 93%}
+      .content_header{font-family: Helvetica, Arial, sans-serif; font-size: 24px; margin: 0px; padding: 0px; text-shadow: 1px 1px 1px #FFFFFF; color: #244a67}
+      .email_header{font-weight: normal;}
+      .padding_center_table{border: 0; width: 576px}
+      .td_content{background-color: #1c3851; border: solid 1px #193044; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; -khtml-border-radius: 8px; vertical-align: top}
+      .head_content{font-family: Helvetica, Arial, sans-serif; font-size: 18px; margin: 0px; padding: 0px; text-shadow: 1px 1px 1px #333333; color: #62b6ee}
+      .p_content{font-family: Helvetica, Arial, sans-serif ; font-size: 15px; margin-top: 0px; margin-bottom: 0px; padding: 0px; color: #e7eff6}
+      .td_vmid{height: 40px; vertical-align: middle}
+
+  %body.body
+    %table.full_width_table{cellpadding: "0", cellspacing: "0"}
+      %tr
+        %td.case
+          %table.center_full_table{cellpadding: "0", cellspacing: "0"}
+            %tr
+              %td
+                %table#top{align: "center", cellpadding: "0", cellspacing: "0"}
+                  %tr
+                    %td.td_center
+          %table#top{align: "center", cellpadding: "0", cellspacing: "0"}
+            %tr
+              %td.td_top
+            %tr
+              %td.td_bg
+                %table.full_width_table{cellpadding: "0", cellspacing: "0"}
+                  %tr
+                    %td.tr_td_top
+                    %td.tr_td_bot
+                  %tr
+                    %td.td_vtop
+                      %table.table_width{cellpadding: "0", cellspacing: "0"}
+                        %tr
+                          %td.td_vbot
+                            %table.full_width_table{cellpadding: "0", cellspacing: "0"}
+                              %tr
+                                %td.tr_td_wid_top
+                                %td.tr_td_wid_bot
+                          %td.td_vmid
+                            %h1.content_header
+                              = yield :head
+                              %span.email_header
+                                = yield :mail
+                    %td.td_vtop
+                      %table.full_width_table{cellpadding: "0", cellspacing: "0"}
+                        %tr
+                          %td.td_height
+            %tr
+              %td.td_top
+          / /intro
+          / content section
+          %table.padding_center_table{align: "center", cellpadding: "20", cellspacing: "0"}
+            %tr
+              %td.td_content
+                %h2.head_content
+                  = yield :content_head
+                %table.full_width_table{cellpadding: "0", cellspacing: "0"}
+                  %tr
+                    %td.td_height
+                .p_content
+                  = yield :content
+                %table.full_width_table{cellpadding: "0", cellspacing: "0"}
+                  %tr
+                    %td.td_vmid
