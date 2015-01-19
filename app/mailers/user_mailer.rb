@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: "startingkit@rails.com"
-
+  default from: "starterkit@rails.com", reply_to: "starterkit@mail.com"
+  layout "mail"
 
   def signup_confirmation(user)
     @user = user
@@ -11,4 +11,5 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail to: user.email, subject: "Reset Password"
   end
+
 end

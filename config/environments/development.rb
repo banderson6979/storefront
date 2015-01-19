@@ -4,21 +4,21 @@ Rails.application.configure do
   # Set the environment variables
   ENV['SENTRY_DNS'] = ''
 
-  ENV['FACEBOOK_KEY'] = ''
-  ENV['FACEBOOK_SECRET'] = ''
-  
-  ENV['TWITTER_KEY'] = ''
-  ENV['TWITTER_SECRET'] = ''
-  
-  ENV['INSTAGRAM_KEY'] = ''
-  ENV['INSTAGRAM_SECRET'] = ''
+  ENV['FACEBOOK_KEY'] = '317168138486358'
+  ENV['FACEBOOK_SECRET'] = 'af25517eb86f9d5d9de3d4bca01079fe'
+
+  ENV['TWITTER_KEY'] = 'XY2UzRuj3vZZtGSkKexZrpzrJ'
+  ENV['TWITTER_SECRET'] = 'q93iXlnQZZdVE3JM9fMLx4h98jxy76X6z30Tr5r1D9GoW3dhp4'
+
+  ENV['INSTAGRAM_KEY'] = '3e162c82d5014111a37f19e65347ead1'
+  ENV['INSTAGRAM_SECRET'] = '71f35ca6e4f14554b739b048135a316a'
 
   ENV['CARRIERWAVE_PROVIDER'] = 'AWS'
   ENV['CARRIERWAVE_ACCESS_KEY'] = 'AKIAJCYBJRQJPYSIJ7PQ'
   ENV['CARRIERWAVE_SECRET_ACCESS'] = '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'
   ENV['CARRIERWAVE_REGION'] = 'us-east-1'
   ENV['CARRIERWAVE_FOG_DIRECTORY'] = '-orchestrano'
-  
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
