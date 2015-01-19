@@ -18,7 +18,7 @@ Rails.application.configure do
   ENV['CARRIERWAVE_SECRET_ACCESS'] = ''
   ENV['CARRIERWAVE_REGION'] = ''
   ENV['CARRIERWAVE_FOG_DIRECTORY'] = ''
-  
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

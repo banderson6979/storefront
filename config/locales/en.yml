@@ -42,10 +42,12 @@ en:
       confirmation_instructions:
         head: "Welcome,"
         subject: "Confirmation instructions"
+        content_head: "Hi there."
         details: "You can confirm your account email through the link below:"
         confirm_account: "Confirm my account"
       reset_password_instructions:
         head: "Hello,"
+        content_head: "Hi there."
         subject: "Reset password instructions"
         details: "Someone has requested a link to change your password. You can do this through the link below."
         change_password: "Change my password"
@@ -53,6 +55,7 @@ en:
         details_to_change: "Your password won't change until you access the link above and create a new one."
       unlock_instructions:
         subject: "Unlock instructions"
+        content_head: "Hi there."
         head: ",Hello"
         details: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
         instructions: "Click the link below to unlock your account:"
@@ -130,6 +133,7 @@ en:
   user_mailer:
     reset_password:
       head: "Hello,"
+      content_head: "Hi there."
       subject: "Reset password instructions"
       details: "Someone has requested a link to change your password. You can do this through the link below."
       change_password: "Change my password"
@@ -137,6 +141,7 @@ en:
       details_to_change: "Your password won't change until you access the link above and create a new one."
     signup_confirmation:
       head: "Welcome,"
+      content_head: "Hi there."
       details: "Thank you for signing up. Now you can login using your credentials."
   pages:
     index:

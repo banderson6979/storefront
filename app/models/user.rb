@@ -20,8 +20,9 @@ class User < ActiveRecord::Base
         user.email = auth.info.nickname + "@#{auth.provider}.com"
       end
       user.password = Devise.friendly_token[0,20]
-      user.image = auth.info.image
+      user.image = auth.info.image.gsub('http://','https://')
       user.save!
     end
   end
+
 end
