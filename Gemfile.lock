@@ -45,7 +45,7 @@ GIT
       faraday (>= 0.7.6)
 
 PATH
-  remote: /Users/atandrau/work/skit-modules/tol_skit_sessions_facebook
+  remote: ../skit-modules/tol_skit_sessions_facebook
   specs:
     tol_skit_sessions_facebook (0.0.1)
       rails (~> 4.2.0)
