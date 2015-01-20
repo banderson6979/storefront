@@ -22,6 +22,7 @@ module Starterkitrails
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{config.root}/lib)
+    config.active_record.raise_in_transactional_callbacks = true
 
     config.font_assets.origin = '*'
     config.middleware.insert_before "ActionDispatch::Static", "Rack::Cors" do

@@ -6,7 +6,7 @@ ruby '2.1.4'
 gem 'unicorn'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -42,6 +42,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # The administration framework for Ruby on Rails.
+gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
+gem 'responders', '~> 2.0'
 gem 'activeadmin', github: 'activeadmin'
 
 # Flexible authentication solution for Rails with Warden
@@ -80,6 +82,8 @@ gem 'font_assets'
 
 # Start processes using the Procfile
 gem 'foreman'
+
+gem 'tol_skit_sessions_facebook', path: "../skit-modules/tol_skit_sessions_facebook"
 
 # Gems for development and test tools
 group :development, :test do

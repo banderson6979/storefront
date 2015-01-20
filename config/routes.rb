@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       delete 'sign_out' => 'sessions#destroy'
       post   'forgot'   => 'sessions#forgot'
     end
+
+    mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
+    
     resources :users
     resources :sessions
   end
