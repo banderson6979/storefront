@@ -1,7 +1,9 @@
 require 'spec_helper'
 
-describe Api::SessionsController, type: :controller do
-
+describe TolSkitSessions::SessionsController, type: :controller do
+  before(:each) do
+    @routes = TolSkitSessions::Engine.routes
+  end
 
   let(:user) { FactoryGirl.create(:user) }
   before (:each) do

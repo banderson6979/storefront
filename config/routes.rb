@@ -12,16 +12,10 @@ Rails.application.routes.draw do
 
   # routes for the API's
   namespace :api, defaults: {format: :json} do
-    devise_scope :user do
-      post   'sign_in'  => 'sessions#create'
-      delete 'sign_out' => 'sessions#destroy'
-      post   'forgot'   => 'sessions#forgot'
-    end
-
+    mount TolSkitSessions::Engine => "/"
     mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
     
     resources :users
-    resources :sessions
   end
 
   # routes for locale change

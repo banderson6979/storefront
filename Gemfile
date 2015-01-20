@@ -84,6 +84,7 @@ gem 'font_assets'
 gem 'foreman'
 
 gem 'tol_skit_sessions_facebook', path: "../skit-modules/tol_skit_sessions_facebook"
+gem 'tol_skit_sessions',          path: "../skit-modules/tol_skit_sessions"
 
 # Gems for development and test tools
 group :development, :test do
