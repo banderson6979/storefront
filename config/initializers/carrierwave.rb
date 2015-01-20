@@ -5,5 +5,6 @@ CarrierWave.configure do |config|
     aws_secret_access_key: ENV['CARRIERWAVE_SECRET_ACCESS'],
     region:                ENV['CARRIERWAVE_REGION']
   }
+  
   config.fog_directory  = Rails.env + ENV['CARRIERWAVE_FOG_DIRECTORY']
 end
