@@ -58,7 +58,7 @@ RSpec.describe TolSkitSessionsFacebook::FacebookController, type: :controller do
                          email: "john.doe@facebook.com"}
 
       expect(response.status).to eq(400)
-      expect(json["email"]).to eq("has already been taken")
+      expect(json["email"]).to eq(["has already been taken"])
     end
   end
 end
