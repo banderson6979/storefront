@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Private gem for non open-source Ruby Gems
+source 'https://THq8z2w-sW925RjWBgYU@gem.fury.io/takeofflabs/'
+
 ruby '2.1.4'
 
 # Use unicorn as the app server
@@ -83,8 +86,13 @@ gem 'font_assets'
 # Start processes using the Procfile
 gem 'foreman'
 
-gem 'tol_skit_sessions_facebook', path: "../skit-modules/tol_skit_sessions_facebook"
-gem 'tol_skit_sessions',          path: "../skit-modules/tol_skit_sessions"
+if ENV["starter_kit_development"].nil?
+  gem 'tol_skit_sessions_facebook'
+  gem 'tol_skit_sessions'  
+else
+  gem 'tol_skit_sessions_facebook', path: "../skit-modules/tol_skit_sessions_facebook"
+  gem 'tol_skit_sessions',          path: "../skit-modules/tol_skit_sessions"
+end
 
 # Gems for development and test tools
 group :development, :test do
