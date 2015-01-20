@@ -24,8 +24,41 @@ RSpec.describe TolSkitSessionsFacebook::FacebookController, type: :controller do
       expect(user.first_name).to eq("John")
       expect(user.last_name).to eq("Doe")
       expect(user.email).to eq("john.doe@facebook.com")
-      expect(user.uid).to eq("1234")
+      expect(user.uid).to eq("1234")  
       
+      expect(json["user_id"]).to eq(user.id)
+    end
+    
+    it "identifies facebook user if already in the system" do
+      @user = FactoryGirl.create(:user, provider: "facebook",
+                                        uid: "1234")
+      
+      post :create, user: {uid: "1234",
+                    first_name: "John",
+                     last_name: "Doe",
+                         email: "john.doe@facebook.com"}
+      
+      expect(json["user_id"]).to eq(@user.id)
+      expect(User.count).to eq(1)
+      
+      @user.reload
+      expect(@user.first_name).to eq("John")
+      expect(@user.last_name).to eq("Doe")
+      expect(@user.email).to eq("john.doe@facebook.com")
+    end
+    
+    it "errors if e-mail already existent, but different provider" do
+      @user = FactoryGirl.create(:user, provider: "twitter",
+                                        email: "john.doe@facebook.com",
+                                        uid: "1234")
+      
+      post :create, user: {uid: "1234",
+                    first_name: "John",
+                     last_name: "Doe",
+                         email: "john.doe@facebook.com"}
+
+      expect(response.status).to eq(400)
+      expect(json["email"]).to eq("has already been taken")
     end
   end
 end
