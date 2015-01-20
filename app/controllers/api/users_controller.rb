@@ -5,8 +5,10 @@ class UsersController < BaseController
  
   def create
     @user = User.new(user_params)
-    @user.save
-    UserMailer.signup_confirmation(@user).deliver
+    if @user.save
+      UserMailer.signup_confirmation(@user).deliver
+    end
+    
     respond_with(:api, @user)
   end
 
@@ -24,7 +26,8 @@ class UsersController < BaseController
   protected
   def user_params
     params.require(:user) \
-          .permit( :email, :password, :password_confirmation, :image)
+          .permit( :email, :password, :password_confirmation, :image,
+                   :first_name, :last_name)
   end
 end
 end
