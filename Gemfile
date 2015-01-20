@@ -86,12 +86,15 @@ gem 'font_assets'
 # Start processes using the Procfile
 gem 'foreman'
 
-if ENV["starter_kit_development"].nil?
-  gem 'tol_skit_sessions_facebook'
-  gem 'tol_skit_sessions'  
+skit_gems = ['sessions_facebook', 'sessions']
+if !ENV["starter_kit_development"].nil?
+  skit_gems.each do |sk|
+    gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
+  end
 else
-  gem 'tol_skit_sessions_facebook', path: "../skit-modules/tol_skit_sessions_facebook"
-  gem 'tol_skit_sessions',          path: "../skit-modules/tol_skit_sessions"
+  skit_gems.each do |sk|
+    gem "tol_skit_#{sk}"
+  end
 end
 
 # Gems for development and test tools
