@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
 
+  def edit
+    @user = current_user
+  end
+
   def update()
     prepare_params
     if @user.update_attributes(user_params)
@@ -12,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   private
-
     def user_params
       params.require(:user).permit( :email, :password, :password_confirmation, :image)
     end
