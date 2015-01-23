@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # the page root
-  root 'pages#index'
+  root 'users#edit'
 
   # routes for Devise and Omniauth
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }

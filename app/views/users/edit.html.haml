@@ -21,7 +21,13 @@
 
         .form-group
           %label= t ".picture"
+
+        .form-group
+          = image_tag @user.image_url, class: "img-rounded"
           = f.file_field :image, class: "block"
 
         .bottom-margin
           = f.submit (t ".button_update"), class: "btn btn-success full-width"
+
+        .center
+          = link_to (t ".button_sign_out"), signout_path, class: "btn btn-default"
