@@ -1,0 +1,25 @@
+.row
+  .col-md-4.col-md-offset-4
+    .wrapper
+      = render "shared/logo"
+
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+        .input-group.input-group-lg.bottom-margin
+          %span.input-group-addon
+            %i.fa.fa-user
+          = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "#{t ".email"}", class: "form-control input-text"
+
+        .input-group.input-group-lg.bottom-margin
+          %span.input-group-addon
+            %i.fa.fa-lock
+          = f.password_field :password, autocomplete: "off", placeholder: "#{t ".password"}", class: "form-control"
+
+        - if devise_mapping.rememberable?
+          .form-group
+            = f.check_box :remember_me
+            = f.label (t ".remember_me")
+
+        = f.submit (t ".button_log_in"), class: "btn btn-success full-width"
+      .help-links
+        = render "devise/shared/links"
