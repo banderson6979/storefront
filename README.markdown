@@ -1,5 +1,7 @@
 # starterkitrails
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 It is a Rails 4 app with Ruby 2.1.4.
 
 ## Running on your Machine
