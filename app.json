@@ -1,7 +1,6 @@
 {
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/button-sample",
-  "logo": "https://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"]
+  "name": "Starter Kit Rails",
+  "description": "A starter kit for Rails applications",
+  "repository": "https://bitbucket.org/takeofflabs/starterkitrails",
+  "keywords": ["HTML5", "ruby", "rails"]
 }
