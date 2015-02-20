@@ -86,6 +86,9 @@ gem 'font_assets'
 # Start processes using the Procfile
 gem 'foreman'
 
+# the font-awesome font for the rails asset pipeline
+gem 'font-awesome-rails'
+
 skit_gems = ['sessions_facebook', 'sessions']
 if !ENV["starter_kit_development"].nil?
   skit_gems.each do |sk|
