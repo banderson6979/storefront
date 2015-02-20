@@ -9,5 +9,7 @@ window.starterkitrails = window.starterkitrails or {}
         setTimeout ->
           $('.flash-container').slideUp()
         , display_for_seconds
+      $(document).on 'click', '.close', ->
+        $('.flash-container').hide()
 
 ) window.starterkitrails.shared = window.starterkitrails.shared or {}, jQuery
