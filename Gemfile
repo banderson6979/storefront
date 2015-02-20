@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Private gem for non open-source Ruby Gems
 source 'https://THq8z2w-sW925RjWBgYU@gem.fury.io/takeofflabs/'
 
-ruby '2.1.4'
+ruby '2.2.0'
 
 # Use unicorn as the app server
 gem 'unicorn'
@@ -116,7 +116,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+
   #gem 'apipie-rails'
 end
 
