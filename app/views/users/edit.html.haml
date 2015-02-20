@@ -26,6 +26,13 @@
           = image_tag @user.image_url, class: "img-rounded"
           = f.file_field :image, class: "block"
 
+        .fileinput.fileinput-new{"data-provides" => :image}
+          .fileinput-preview.thumbnail{"data-trigger" => "fileinput", :style => "width: 80px; height: 80px;"}
+          %span.btn.btn-default.btn-file
+            %span.fileinput-new Select image
+            %span.fileinput-exists Change
+            %input{:name => "...", :type => "file"}/
+          %a.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Remove
         .bottom-margin
           = f.submit (t ".button_update"), class: "btn btn-success full-width"
 

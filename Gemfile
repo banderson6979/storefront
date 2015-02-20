@@ -89,6 +89,9 @@ gem 'foreman'
 # the font-awesome font for the rails asset pipeline
 gem 'font-awesome-rails'
 
+# formtastic and simpleform
+gem 'jasny_bootstrap_extension_rails'
+
 skit_gems = ['sessions_facebook', 'sessions']
 if !ENV["starter_kit_development"].nil?
   skit_gems.each do |sk|
