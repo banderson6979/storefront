@@ -1,40 +1,35 @@
 .row
   .col-md-4.col-md-offset-4
-    .wrapper
-      = form_for @user, html: {multipart: true } do |f|
-        - add_error(@user.errors.full_messages.to_sentence, 'alert') if @user.errors.any?
+    = form_for @user, html: {multipart: true } do |f|
+      - add_error(@user.errors.full_messages.to_sentence, 'alert') if @user.errors.any?
 
-        .input-group.input-group-lg.bottom-margin
-          %span.input-group-addon
-            %i.fa.fa-user
-          = f.email_field :email, autofocus: true, placeholder: "#{t ".email"}", autocomplete: "off", class: "form-control"
+      .form-group.input-group.input-group-lg
+        %span.input-group-addon
+          %i.fa.fa-user
+        = f.email_field :email, autofocus: true, placeholder: "#{t ".email"}", autocomplete: "off", class: "form-control"
 
-        .input-group.input-group-lg.bottom-margin
-          %span.input-group-addon
-            %i.fa.fa-lock
-          = f.password_field :password, autocomplete: "off", placeholder: "#{t ".new_password"}", class: "form-control"
+      .form-group.input-group.input-group-lg
+        %span.input-group-addon
+          %i.fa.fa-lock
+        = f.password_field :password, autocomplete: "off", placeholder: "#{t ".new_password"}", class: "form-control"
 
-        .input-group.input-group-lg.bottom-margin
-          %span.input-group-addon
-            %i.fa.fa-lock
-          = f.password_field :password, autocomplete: "off", placeholder: "#{t ".confirm_new_password"}", class: "form-control"
+      .form-group.input-group.input-group-lg
+        %span.input-group-addon
+          %i.fa.fa-lock
+        = f.password_field :password, autocomplete: "off", placeholder: "#{t ".confirm_new_password"}", class: "form-control"
 
-        .form-group
-          %label= t ".picture"
-
-        .form-group
-          = image_tag @user.image_url, class: "img-rounded"
-          = f.file_field :image, class: "block"
-
-        .fileinput.fileinput-new{"data-provides" => :image}
+      .form-group
+        %label= t ".picture"
+        .fileinput.fileinput-new{"data-provides" => "fileinput"}
           .fileinput-preview.thumbnail{"data-trigger" => "fileinput", :style => "width: 80px; height: 80px;"}
           %span.btn.btn-default.btn-file
             %span.fileinput-new Select image
-            %span.fileinput-exists Change
-            %input{:name => "...", :type => "file"}/
+            -# %span.fileinput-exists Change
+            %input= f.file_field :image
           %a.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Remove
-        .bottom-margin
-          = f.submit (t ".button_update"), class: "btn btn-success full-width"
 
-        .center
-          = link_to (t ".button_sign_out"), signout_path, class: "btn btn-default"
+      .form-group
+        = f.submit (t ".button_update"), class: "btn btn-success full-width"
+
+      .form-group
+        = link_to (t ".button_sign_out"), signout_path, class: "btn btn-default"
