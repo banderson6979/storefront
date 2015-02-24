@@ -219,6 +219,8 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
     font_assets (0.1.11)
@@ -246,6 +248,7 @@ GEM
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
+    jasny_bootstrap_extension_rails (0.0.1)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -429,12 +432,14 @@ DEPENDENCIES
   devise
   factory_girl_rails
   fog
+  font-awesome-rails
   font-awesome-sass
   font_assets
   foreman
   haml
   httparty
   inherited_resources!
+  jasny_bootstrap_extension_rails
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener

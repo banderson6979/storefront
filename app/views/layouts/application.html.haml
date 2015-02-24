@@ -7,7 +7,7 @@
     = csrf_meta_tags
   %body{class: params[:controller].gsub("/", "-")}
 
-    .container-fluid
+    .container-fluid.margin-top-100
       = yield
 
       %script{type: "text/javascript", 'data-turbolinks-eval'=>false}
