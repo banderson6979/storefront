@@ -20,7 +20,7 @@
       
       .form-group
         .fileupload.fileupload-new{data: {provides: 'fileupload'}}
-          .fileupload-preview.thumbnail.thumb-preview{style: "width: 80px; height: 80px"}
+          .fileupload-preview.thumbnail.thumb-preview{style: "width: 80px; height: 77px"}
             - if @user.try(:image).present?
               = image_tag @user.image
             - else
@@ -29,7 +29,7 @@
             %span.btn.btn-file.btn-default.btn-sm
               %span.fileupload-new
                 %span.glyphicon.glyphicon-picture
-                = t ".picture"
+                = t ".image"
               %span.fileupload-exists
                 %span.glyphicon.glyphicon-open
                 = '.change'
@@ -37,7 +37,14 @@
             = link_to "#", class: "btn fileupload-exists btn-danger btn-sm", data: {dismiss: 'fileupload'} do
               %span.glyphicon.glyphicon-remove
               = t '.remove'
-
+      
+      - if @user.try(:image).present?
+        .form-group
+          .checkbox
+            %label
+              = f.check_box :remove_image
+              = t ".remove_image"
+            
       .form-group
         = f.submit (t ".button_update"), class: "btn btn-success full-width"
 

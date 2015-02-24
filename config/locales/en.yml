@@ -148,7 +148,7 @@ en:
   users:
     edit:
       email: "Email"
-      picture: "Picture"
+      image: "Image"
       new_password: "New password"
       confirm_new_password: "Confirm new password"
       button_update: "Update"
@@ -156,3 +156,4 @@ en:
       button_sign_out: "Sign out"
       remove: "Remove"
       change: "Change"
+      remove_image: "Remove the image"
