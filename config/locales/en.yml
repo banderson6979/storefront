@@ -154,3 +154,5 @@ en:
       button_update: "Update"
       signed_in: "Signed in as"
       button_sign_out: "Sign out"
+      remove: "Remove"
+      change: "Change"

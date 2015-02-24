@@ -17,16 +17,26 @@
         %span.input-group-addon
           %i.fa.fa-lock
         = f.password_field :password, autocomplete: "off", placeholder: "#{t ".confirm_new_password"}", class: "form-control"
-
+      
       .form-group
-        %label= t ".picture"
-        .fileinput.fileinput-new{"data-provides" => "fileinput"}
-          .fileinput-preview.thumbnail{"data-trigger" => "fileinput", :style => "width: 80px; height: 80px;"}
-          %span.btn.btn-default.btn-file
-            %span.fileinput-new Select image
-            -# %span.fileinput-exists Change
-            %input= f.file_field :image
-          %a.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Remove
+        .fileupload.fileupload-new{data: {provides: 'fileupload'}}
+          .fileupload-preview.thumbnail.thumb-preview{style: "width: 80px; height: 80px"}
+            - if @user.try(:image).present?
+              = image_tag @user.image
+            - else
+              = image_tag "fallback/avatar.png"
+          %div
+            %span.btn.btn-file.btn-default.btn-sm
+              %span.fileupload-new
+                %span.glyphicon.glyphicon-picture
+                = t ".picture"
+              %span.fileupload-exists
+                %span.glyphicon.glyphicon-open
+                = '.change'
+              = f.file_field :image
+            = link_to "#", class: "btn fileupload-exists btn-danger btn-sm", data: {dismiss: 'fileupload'} do
+              %span.glyphicon.glyphicon-remove
+              = t '.remove'
 
       .form-group
         = f.submit (t ".button_update"), class: "btn btn-success full-width"
