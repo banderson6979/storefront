@@ -94,19 +94,15 @@ gem 'jasny_bootstrap_extension_rails'
 
 skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
 
-skit_gems.each do |sk|
-  gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
+if ENV["starter_kit_development"].nil?
+  skit_gems.each do |sk|
+    gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
+  end
+else
+  skit_gems.each do |sk|
+    gem "tol_skit_#{sk}"
+  end
 end
-
-# if !ENV["starter_kit_development"].nil?
-#   skit_gems.each do |sk|
-#     gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
-#   end
-# else
-#   skit_gems.each do |sk|
-#     gem "tol_skit_#{sk}"
-#   end
-# end
 
 # Gems for development and test tools
 group :development, :test do
