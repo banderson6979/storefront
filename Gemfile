@@ -122,10 +122,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  #gem 'apipie-rails'
 end
-
 
 group :test do
   # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
