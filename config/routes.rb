@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     mount TolSkitSessions::Engine => "/"
     mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
     mount TolSkitSessionsTwitter::Engine => "sessions/twitter"
+    mount TolSkitSessionsInstagram::Engine => "sessions/instagram"
     
     resources :users
   end

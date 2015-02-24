@@ -56,6 +56,12 @@ PATH
       rails (~> 4.2.0)
 
 PATH
+  remote: ../skit-modules/tol_skit_sessions_instagram
+  specs:
+    tol_skit_sessions_instagram (0.0.1)
+      rails (~> 4.2.0)
+
+PATH
   remote: ../skit-modules/tol_skit_sessions_twitter
   specs:
     tol_skit_sessions_twitter (0.0.1)
@@ -474,6 +480,7 @@ DEPENDENCIES
   tol!
   tol_skit_sessions!
   tol_skit_sessions_facebook!
+  tol_skit_sessions_instagram!
   tol_skit_sessions_twitter!
   turbolinks
   uglifier (>= 1.3.0)
