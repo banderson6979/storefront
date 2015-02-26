@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Private gem for non open-source Ruby Gems
 source 'https://THq8z2w-sW925RjWBgYU@gem.fury.io/takeofflabs/'
 
-ruby '2.1.4'
+ruby '2.2.0'
 
 # Use unicorn as the app server
 gem 'unicorn'
@@ -86,6 +86,12 @@ gem 'font_assets'
 # Start processes using the Procfile
 gem 'foreman'
 
+# the font-awesome font for the rails asset pipeline
+gem 'font-awesome-rails'
+
+# formtastic and simpleform
+gem 'jasny_bootstrap_extension_rails'
+
 skit_gems = ['sessions_facebook', 'sessions']
 if !ENV["starter_kit_development"].nil?
   skit_gems.each do |sk|
@@ -116,7 +122,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+
   #gem 'apipie-rails'
 end
 
