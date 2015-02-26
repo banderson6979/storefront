@@ -92,8 +92,9 @@ gem 'font-awesome-rails'
 # formtastic and simpleform
 gem 'jasny_bootstrap_extension_rails'
 
-skit_gems = ['sessions_facebook', 'sessions']
-if !ENV["starter_kit_development"].nil?
+skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
+
+if ENV["starter_kit_development"].nil?
   skit_gems.each do |sk|
     gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
   end
@@ -122,10 +123,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  #gem 'apipie-rails'
 end
-
 
 group :test do
   # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)

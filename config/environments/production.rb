@@ -2,22 +2,6 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Set the environment variables
-  ENV['SENTRY_DNS'] = ''
-
-  ENV['FACEBOOK_KEY'] = ''
-  ENV['FACEBOOK_SECRET'] = ''
-
-  ENV['TWITTER_KEY'] = ''
-  ENV['TWITTER_SECRET'] = ''
-
-  ENV['INSTAGRAM_KEY'] = ''
-  ENV['INSTAGRAM_SECRET'] = ''
-
-  ENV['CARRIERWAVE_PROVIDER'] = ''
-  ENV['CARRIERWAVE_ACCESS_KEY'] = ''
-  ENV['CARRIERWAVE_SECRET_ACCESS'] = ''
-  ENV['CARRIERWAVE_REGION'] = ''
-  ENV['CARRIERWAVE_FOG_DIRECTORY'] = ''
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -95,6 +79,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000'}
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { :host => 'http://starterkit.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'starterkit.herokuapp.com',
+    :authentication => :plain
+  }
 end
