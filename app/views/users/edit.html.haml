@@ -17,7 +17,7 @@
         %span.input-group-addon
           %i.fa.fa-lock
         = f.password_field :password, autocomplete: "off", placeholder: "#{t ".confirm_new_password"}", class: "form-control"
-      
+
       .form-group
         .fileupload.fileupload-new{data: {provides: 'fileupload'}}
           .fileupload-preview.thumbnail.thumb-preview{style: "width: 80px; height: 77px"}
@@ -32,19 +32,19 @@
                 = t ".image"
               %span.fileupload-exists
                 %span.glyphicon.glyphicon-open
-                = '.change'
+                = t '.change'
               = f.file_field :image
             = link_to "#", class: "btn fileupload-exists btn-danger btn-sm", data: {dismiss: 'fileupload'} do
               %span.glyphicon.glyphicon-remove
               = t '.remove'
-      
+
       - if @user.try(:image).present?
         .form-group
           .checkbox
             %label
               = f.check_box :remove_image
               = t ".remove_image"
-            
+
       .form-group
         = f.submit (t ".button_update"), class: "btn btn-success full-width"
 
