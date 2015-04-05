@@ -29,9 +29,6 @@ gem 'haml'
 # using bootstrap 3 - flat UI
 gem 'bootstrap-sass'
 
-# the font-awesome font bundled as an asset for the rails asset pipeline
-gem 'font-awesome-sass'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -92,7 +89,9 @@ gem 'font-awesome-rails'
 # formtastic and simpleform
 gem 'jasny_bootstrap_extension_rails'
 
-skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
+skit_gems = ['sessions_facebook', 'sessions']
+
+# skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
 
 if ENV["starter_kit_development"].nil?
   skit_gems.each do |sk|

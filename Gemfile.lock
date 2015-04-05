@@ -55,18 +55,6 @@ PATH
     tol_skit_sessions_facebook (0.0.1)
       rails (~> 4.2.0)
 
-PATH
-  remote: ../skit-modules/tol_skit_sessions_instagram
-  specs:
-    tol_skit_sessions_instagram (0.0.1)
-      rails (~> 4.2.0)
-
-PATH
-  remote: ../skit-modules/tol_skit_sessions_twitter
-  specs:
-    tol_skit_sessions_twitter (0.0.1)
-      rails (~> 4.2.0)
-
 GEM
   remote: https://rubygems.org/
   remote: https://THq8z2w-sW925RjWBgYU@gem.fury.io/takeofflabs/
@@ -245,8 +233,6 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-    font-awesome-sass (4.2.2)
-      sass (~> 3.2)
     font_assets (0.1.11)
       rack
     foreman (0.77.0)
@@ -453,7 +439,6 @@ DEPENDENCIES
   factory_girl_rails
   fog
   font-awesome-rails
-  font-awesome-sass
   font_assets
   foreman
   haml
@@ -480,8 +465,6 @@ DEPENDENCIES
   tol!
   tol_skit_sessions!
   tol_skit_sessions_facebook!
-  tol_skit_sessions_instagram!
-  tol_skit_sessions_twitter!
   turbolinks
   uglifier (>= 1.3.0)
   unicorn
