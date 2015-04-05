@@ -2,16 +2,14 @@ class User < ActiveRecord::Base
   include TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
-         :omniauth_providers => [:facebook, :twitter, :instagram]
-        #  :omniauth_providers => [:facebook]
+        #  :omniauth_providers => [:facebook, :twitter, :instagram]
+         :omniauth_providers => [:facebook]
 
   before_save :ensure_authentication_token
 
   mount_uploader :image, ImageUploader
-
-  after_create :signup_confirmation
 
   def self.from_omniauth(auth)
     where(provider: auth[:provider], uid: auth[:uid]).first_or_initialize.tap do |user|
@@ -23,10 +21,6 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20] if user.password.blank?
       user.remote_image_url = auth.info.image.gsub('http://','https://') if user.remote_image_url.blank?
     end
-  end
-
-  def signup_confirmation
-    UserMailer.signup_confirmation(self).deliver_now
   end
 
 end
