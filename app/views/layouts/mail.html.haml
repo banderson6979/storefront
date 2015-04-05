@@ -2,55 +2,61 @@
   %head
     %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
     %title Email StarterKit
-  %body{style: "margin: 0; padding: 0; background-color: #234865"}
-    %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
+  %body{style: "margin: 0; padding: 0; background-color: #F0E68C"}
+    %table{style: "width: 100%"}
       %tr
-        %td{style: "background-color: #234865"}
-          %table{cellpadding: "0", cellspacing: "0", style: "border: 0; background-color: transparent; width: 100%"}
+        %td{style: "width: 10%; background-color: blue"}
+        %td{style: "width: 80%"}
+          %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
             %tr
-              %td
+              %td{style: "background-color: #F0E68C"}
+                %table{cellpadding: "0", cellspacing: "0", style: "border: 0; background-color: transparent; width: 100%"}
+                  %tr
+                    %td
+                      %table{align: "center", cellpadding: "0", cellspacing: "0", style: "border: 0; width: 578px"}
+                        %tr
+                          %td{style: "height: 60px; valign: top"}
                 %table{align: "center", cellpadding: "0", cellspacing: "0", style: "border: 0; width: 578px"}
                   %tr
-                    %td{style: "height: 60px; valign: top"}
-          %table{align: "center", cellpadding: "0", cellspacing: "0", style: "border: 0; width: 578px"}
-            %tr
-              %td{style: "height: 20px; valign: top"}
-            %tr
-              %td{style: "background-color: white; height: 79px; valign: top"}
-                %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
+                    %td{style: "height: 20px; valign: top"}
                   %tr
-                    %td{style: "height: 22px; width: 68%"}
-                    %td{style: "height: 20px; width: 32%"}
-                  %tr
-                    %td{style: "valign: top"}
-                      %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 82%"}
+                    %td{style: "background-color: white; height: 79px; valign: top"}
+                      %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
                         %tr
-                          %td{style: "valign: bottom; width: 7%"}
+                          %td{style: "height: 22px; width: 68%"}
+                          %td{style: "height: 20px; width: 32%"}
+                        %tr
+                          %td{style: "valign: top"}
+                            %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 82%"}
+                              %tr
+                                %td{style: "valign: bottom; width: 7%"}
+                                  %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
+                                    %tr
+                                      %td{style: "width: 15px"}
+                                      %td{style: "width: 10px"}
+                                %td{style: "valign: middle; width: 93%"}
+                                  %h1{style: "font-family: Helvetica, Arial, sans-serif; font-size: 24px; margin: 0px; margin-bottom: 20px; padding: 0px; text-shadow: 1px 1px 1px #FFFFFF; color: #244a67"}
+                                    = yield :head
+                                    %span{style: "font-weight: normal"}
+                                      = yield :mail
+                          %td{style: "valign: top"}
                             %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
                               %tr
-                                %td{style: "width: 15px"}
-                                %td{style: "width: 10px"}
-                          %td{style: "valign: middle; width: 93%"}
-                            %h1{style: "font-family: Helvetica, Arial, sans-serif; font-size: 24px; margin: 0px; margin-bottom: 20px; padding: 0px; text-shadow: 1px 1px 1px #FFFFFF; color: #244a67"}
-                              = yield :head
-                              %span{style: "font-weight: normal"}
-                                = yield :mail
-                    %td{style: "valign: top"}
+                                %td{style: "height: 10px"}
+                  %tr
+                    %td{style: "height: 20px; valign: top"}
+                %table{align: "center", cellpadding: "20", cellspacing: "0", style: "border: 0; width: 576px"}
+                  %tr
+                    %td{style: "background-color: #1c3851; border: solid 1px #193044; valign: top"}
+                      %h2{style: "font-family: Helvetica, Arial, sans-serif; font-size: 18px; margin: 0px; padding: 0px; text-shadow: 1px 1px 1px #333333; color: #62b6ee"}
+                        = yield :content_head
                       %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
                         %tr
                           %td{style: "height: 10px"}
-            %tr
-              %td{style: "height: 20px; valign: top"}
-          %table{align: "center", cellpadding: "20", cellspacing: "0", style: "border: 0; width: 576px"}
-            %tr
-              %td{style: "background-color: #1c3851; border: solid 1px #193044; valign: top"}
-                %h2{style: "font-family: Helvetica, Arial, sans-serif; font-size: 18px; margin: 0px; padding: 0px; text-shadow: 1px 1px 1px #333333; color: #62b6ee"}
-                  = yield :content_head
-                %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
-                  %tr
-                    %td{style: "height: 10px"}
-                .p_content{style: "font-family: Helvetica, Arial, sans-serif ; font-size: 15px; margin-top: 0px; margin-bottom: 0px; padding: 0px; color: #e7eff6"}
-                  = yield :content
-                %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
-                  %tr
-                    %td{style: "height: 40px; valign: middle"}
+                      .p_content{style: "font-family: Helvetica, Arial, sans-serif ; font-size: 15px; margin-top: 0px; margin-bottom: 0px; padding: 0px; color: #e7eff6"}
+                        = yield :content
+                      %table{cellpadding: "0", cellspacing: "0", style: "border: 0; width: 100%"}
+                        %tr
+                          %td{style: "height: 40px; valign: middle"}
+
+        %td{style: "width: 10%; background-color: blue"}

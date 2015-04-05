@@ -15,14 +15,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
     def sign_in_from_provider(provider)
-      existent_twitter_user = User.find_by_oauth_token(params[:oauth_token])
-      if existent_twitter_user && provider == "twitter"
-        @user = existent_twitter_user
-      else
-        @user = User.from_omniauth(request.env["omniauth.auth"])
-        if !@user.save
-          set_flash_message(:notice, :error, kind: "#{provider}") if is_navigational_format?
-        end
+      @user = User.from_omniauth(request.env["omniauth.auth"])
+      if !@user.save
+        set_flash_message(:notice, :error, kind: "#{provider}") if is_navigational_format?
       end
       if @user.persisted?
         sign_in_and_redirect @user, event: :authentication
