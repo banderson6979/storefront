@@ -29,9 +29,6 @@ gem 'haml'
 # using bootstrap 3 - flat UI
 gem 'bootstrap-sass'
 
-# the font-awesome font bundled as an asset for the rails asset pipeline
-gem 'font-awesome-sass'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

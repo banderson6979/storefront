@@ -16,6 +16,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     def sign_in_from_provider(provider)
       @user = User.from_omniauth(request.env["omniauth.auth"])
+      @user.skip_confirmation! 
       if !@user.save
         set_flash_message(:notice, :error, kind: "#{provider}") if is_navigational_format?
       end

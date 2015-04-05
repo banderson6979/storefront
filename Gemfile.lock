@@ -46,7 +46,7 @@ GIT
 PATH
   remote: ../skit-modules/tol_skit_sessions
   specs:
-    tol_skit_sessions (0.0.2)
+    tol_skit_sessions (0.0.1)
       rails (~> 4.2.0)
 
 PATH
@@ -233,8 +233,6 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-    font-awesome-sass (4.2.2)
-      sass (~> 3.2)
     font_assets (0.1.11)
       rack
     foreman (0.77.0)
@@ -441,7 +439,6 @@ DEPENDENCIES
   factory_girl_rails
   fog
   font-awesome-rails
-  font-awesome-sass
   font_assets
   foreman
   haml
