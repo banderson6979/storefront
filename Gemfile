@@ -125,6 +125,7 @@ group :development, :test do
 end
 
 group :test do
-  # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
+  # Factory Girls creates factories in order to prevent entering unnecessary
+  # data when creating models in test mode.
   gem "factory_girl_rails"
 end
