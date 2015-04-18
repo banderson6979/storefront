@@ -25,7 +25,7 @@ class UsersController < BaseController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
     render_or_false(@user, "api/users/show")
   end
 
