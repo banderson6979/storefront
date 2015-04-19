@@ -29,9 +29,6 @@ gem 'haml'
 # using bootstrap 3 - flat UI
 gem 'bootstrap-sass'
 
-# the font-awesome font bundled as an asset for the rails asset pipeline
-gem 'font-awesome-sass'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -93,7 +90,10 @@ gem 'font-awesome-rails'
 gem 'jasny_bootstrap_extension_rails'
 
 skit_gems = ['sessions_facebook', 'sessions']
-if !ENV["starter_kit_development"].nil?
+
+# skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
+
+if ENV["starter_kit_development"].nil?
   skit_gems.each do |sk|
     gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
   end
@@ -125,6 +125,7 @@ group :development, :test do
 end
 
 group :test do
-  # Factory_girl_rails provides integration between factory_girl and rails 3 (currently just automatic factory definition loading)
+  # Factory Girls creates factories in order to prevent entering unnecessary
+  # data when creating models in test mode.
   gem "factory_girl_rails"
 end

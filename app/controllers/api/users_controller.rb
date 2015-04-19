@@ -6,28 +6,34 @@ class UsersController < BaseController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.signup_confirmation(@user).deliver
+      UserMailer.signup_confirmation(@user).deliver_now
+      render_or_false(@user, "api/users/show")
+    else
+      render json: @user.errors.full_messages.to_sentence, status: 400 and return
     end
-    
-    respond_with(:api, @user)
   end
 
   def update
     @user = current_user
-    @user.update_attributes(user_params) if @user
-    respond_with(:api, @user)
+    render json: "User not found", status: 400 and return if @user.blank?
+    
+    if @user.update_attributes(user_params)
+      render_or_false(@user, "api/users/show")
+    else
+      render json: @user.errors.full_messages.to_sentence, status: 400 and return
+    end
   end
 
   def show
-    @user = User.find(params[:id])
-    respond_with(:api, @user)
+    @user = User.find_by_id(params[:id])
+    render_or_false(@user, "api/users/show")
   end
 
   protected
   def user_params
     params.require(:user) \
           .permit( :email, :password, :password_confirmation, :image,
-                   :first_name, :last_name)
+                   :first_name, :last_name, :about_me)
   end
 end
 end
