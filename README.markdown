@@ -4,6 +4,11 @@
 
 It is a Rails 4 app with Ruby 2.2.1
 
+## Setup
+
+    1. Create a new Sentry application and set the DNS: File is located in config/initializers/raven.rb
+    2. If active admin is used change the email and password to suit your needs.
+
 ## Running on your Machine
 Get the source:
 
@@ -41,10 +46,5 @@ Run migrations:
 Start the server:
 
     $ rails s
-
-If active admin is used change the email and password to suit your needs.
-
-Create a new Sentry application and set the dns:
-    $ File is located in config/initializers/raven.rb
 
 Open <http://localhost:3000> in your browser to see the app running. If you have issues getting the app running, [email me](mailto:norbert@takeofflabs.com).
