@@ -1,8 +1,8 @@
-# starterkitrails
+# Starter Kit Rails
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-It is a Rails 4 app with Ruby 2.2.0
+It is a Rails 4 app with Ruby 2.2.1
 
 ## Running on your Machine
 Get the source:
