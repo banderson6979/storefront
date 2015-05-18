@@ -8,6 +8,7 @@ It is a Rails 4 app with Ruby 2.2.1
 
     1. Create a new Sentry application and set the DNS: File is located in config/initializers/raven.rb
     2. If active admin is used change the email and password to suit your needs.
+    3. Do not work directly in the starterkitrails folder. Create a copy of it and setup bitbucket for the new project.
 
 ## Running on your Machine
 Get the source:
@@ -22,7 +23,7 @@ Setup rvmrc (assuming you are using TextMate):
 
 Paste the following content and save:
 
-    $ rvm use 2.2.0@starterkitrails --create
+    $ rvm use 2.2.1@starterkitrails --create
 
 Then:
 
