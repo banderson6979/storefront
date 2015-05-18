@@ -3,13 +3,13 @@ source 'https://rubygems.org'
 # Private gem for non open-source Ruby Gems
 source 'https://THq8z2w-sW925RjWBgYU@gem.fury.io/takeofflabs/'
 
-ruby '2.2.0'
+ruby '2.2.2'
 
 # Use unicorn as the app server
 gem 'unicorn'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -93,15 +93,15 @@ gem 'jasny_bootstrap_extension_rails'
 
 skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
 
-if ENV["starter_kit_development"].nil?
-  skit_gems.each do |sk|
-    gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
-  end
-else
-  skit_gems.each do |sk|
-    gem "tol_skit_#{sk}"
-  end
-end
+# if ENV["starter_kit_development"].nil?
+#   skit_gems.each do |sk|
+#     gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
+#   end
+# else
+#   skit_gems.each do |sk|
+#     gem "tol_skit_#{sk}"
+#   end
+# end
 
 # Gems for development and test tools
 group :development, :test do

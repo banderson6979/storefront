@@ -2,8 +2,17 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( iconic_stroke.otf )
 Rails.application.config.assets.precompile += %w( iconic_fill.otf )
+Rails.application.config.assets.precompile += %w( iconic_fill.eot )
+Rails.application.config.assets.precompile += %w( iconic_fill.woff )
+Rails.application.config.assets.precompile += %w( iconic_fill.ttf )
+Rails.application.config.assets.precompile += %w( iconic_fill.svg )
+Rails.application.config.assets.precompile += %w( iconic_stroke.otf )
+Rails.application.config.assets.precompile += %w( iconic_stroke.eot )
+Rails.application.config.assets.precompile += %w( iconic_stroke.woff )
+Rails.application.config.assets.precompile += %w( iconic_stroke.ttf )
+Rails.application.config.assets.precompile += %w( iconic_stroke.svg )
+
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
