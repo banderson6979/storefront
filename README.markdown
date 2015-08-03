@@ -2,7 +2,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-It is a Rails 4 app with Ruby 2.2.1
+It is a Rails 4 app with Ruby 2.2.2
 
 ## Setup
 
@@ -23,7 +23,7 @@ Setup rvmrc (assuming you are using TextMate):
 
 Paste the following content and save:
 
-    $ rvm use 2.2.1@starterkitrails --create
+    $ rvm use 2.2.2@starterkitrails --create
 
 Then:
 
