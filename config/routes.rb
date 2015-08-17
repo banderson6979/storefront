@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   # routes for the API's
   namespace :api, defaults: {format: :json} do
-    mount TolSkitSessions::Engine => "/"
-    mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
+    # mount TolSkitSessions::Engine => "/"
+    # mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
     # mount TolSkitSessionsTwitter::Engine => "sessions/twitter"
     # mount TolSkitSessionsInstagram::Engine => "sessions/instagram"
     

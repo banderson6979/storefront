@@ -89,19 +89,19 @@ gem 'font-awesome-rails'
 # formtastic and simpleform
 gem 'jasny_bootstrap_extension_rails'
 
-skit_gems = ['sessions_facebook', 'sessions']
+# skit_gems = ['sessions_facebook', 'sessions']
 
-# skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
+skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'sessions']
 
-if ENV["starter_kit_development"].nil?
-  skit_gems.each do |sk|
-    gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
-  end
-else
-  skit_gems.each do |sk|
-    gem "tol_skit_#{sk}"
-  end
-end
+# if ENV["starter_kit_development"].nil?
+#   skit_gems.each do |sk|
+#     gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
+#   end
+# else
+#   skit_gems.each do |sk|
+#     gem "tol_skit_#{sk}"
+#   end
+# end
 
 # Gems for development and test tools
 group :development, :test do
@@ -109,7 +109,7 @@ group :development, :test do
   gem 'pry'
 
   # A collection of tools used for Rails development
-  gem 'tol', github: "TakeOffLabs/tol", branch: "develop"
+  gem 'tol'
 
   # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
   gem "letter_opener"
