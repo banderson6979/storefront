@@ -6,7 +6,7 @@ class UsersController < BaseController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.signup_confirmation(@user).deliver_now
+      # UserMailer.signup_confirmation(@user).deliver_now
       render_or_false(@user, "api/users/show")
     else
       render json: @user.errors.full_messages.to_sentence, status: 400 and return
