@@ -98,9 +98,9 @@ skit_gems = ['sessions_instagram', 'sessions_twitter', 'sessions_facebook', 'ses
 #     gem "tol_skit_#{sk}", path: "../skit-modules/tol_skit_#{sk}"
 #   end
 # else
-#   skit_gems.each do |sk|
-#     gem "tol_skit_#{sk}"
-#   end
+  skit_gems.each do |sk|
+    gem "tol_skit_#{sk}"
+  end
 # end
 
 # Gems for development and test tools
