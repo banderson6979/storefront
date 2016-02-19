@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     mount TolSkitSessionsInstagram::Engine => "sessions/instagram"
     
     resources :users
+    resources :admin_sessions, only: [:create]
+    resources :admin_users, only: [:show]
   end
 
   # routes for locale change

@@ -28,5 +28,14 @@ class BaseController < ApplicationController
     request.format = :json if params[:format].nil?
   end
 
+  def admin_auth!
+    current_user = AdminUser.find_by_authentication_token(params[:auth_token])
+    if current_user.present?
+      return current_user
+    else
+      render json: "Not logged in!", status: 401
+    end
+  end
+
 end
 end

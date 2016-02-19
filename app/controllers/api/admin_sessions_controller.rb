@@ -11,18 +11,20 @@ class AdminSessionsController < BaseController
       if @user.valid_password? (params[:password])
         @user.authentication_token = Devise.friendly_token
         @user.save
+        render_or_false(@user, "api/admin_sessions/create")
       else
         render json: "Wrong password!", status: 400
       end
     else
-      render json: "The email provided is not valid", status: 400
+      render json: "The email provided is not an admin email!", status: 400
     end
   end
 
-  private
+  protected
 
   def missing_params
     render json: "", status: 400
   end
 
+end
 end
