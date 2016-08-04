@@ -5,6 +5,7 @@ class UsersController < BaseController
  
   def create
     @user = User.new(user_params)
+    @user.skip_confirmation!
     if @user.save
       # UserMailer.signup_confirmation(@user).deliver_now
       render_or_false(@user, "api/users/show")
