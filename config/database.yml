@@ -1,0 +1,9 @@
+development:
+  adapter:    postgresql
+  host:       localhost
+  database:   pre_employment_app_development
+  timeout:    5000
+  encoding:   unicode
+  pool:       5
+  username: username
+  password: 'password'
