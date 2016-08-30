@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Private gem for non open-source Ruby Gems
 source 'https://THq8z2w-sW925RjWBgYU@gem.fury.io/takeofflabs/'
 
-ruby '2.2.2'
+ruby '2.3.0'
 
 # Use unicorn as the app server
 gem 'unicorn'
