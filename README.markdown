@@ -12,7 +12,8 @@ Note: This application was designed to run on Cloud 9 and the readme file only c
 1. Create a new workspace by clicking on “Create a new workspace” in the Dashboard page.                                  
 2. On the New workspace page                                                                                                                                                         
     * name your app pre_employment_app                                                                                    
-    * at the option of “Clone for git or Mercurial URL” enter the following url: git@bitbucket.org:takeofflabs/youtech.git.        
+    * at the option of “Clone for git or Mercurial URL” enter the following url:
+https://mirceaciuciu@bitbucket.org/takeofflabs/youtech.git.        
     * Choose the Ruby template in “Choose a template”                                                             
     * Click on the “Create workspace button”.                                                                               
 
