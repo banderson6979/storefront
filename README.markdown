@@ -3,9 +3,9 @@
 It is a Rails 4 app with Ruby 2.3.0
 
 ## Running on your Cloud9
-Set up application:                                                                                                                 
-    1. Create a new workspace by clicking on “Create  a new workspace” in the Dashboard page.                                  
-    2. On the New workspace page                                                                                                                   
+#Set up application:                                                                                                                 
+    #1. Create a new workspace by clicking on “Create  a new workspace” in the Dashboard page.                                  
+    #2. On the New workspace page                                                                                                                   
         a. name your app pre_employment_app,
         b. at the option of “Clone for git or Mercurial URL” enter the following url: git@bitbucket.org:takeofflabs/youtech.git. 
         c. Choose the Ruby template in “Choose a template”
